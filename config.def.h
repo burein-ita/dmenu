@@ -3,19 +3,19 @@
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
-static const int user_bh = 0;               /* add an defined amount of pixels to the bar height */
+static const int user_bh = 14;               /* add an defined amount of pixels to the bar height */
 
 static const char *fonts[] = {
-	"monospace:size=10"
+	"Terminus:size=11:style=bold"
 };
-static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+static const char *prompt      = "SELECTION: ";      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#222222" },
-	[SchemeSel] = { "#eeeeee", "#005577" },
-	[SchemeSelHighlight] = { "#ffc978", "#005577" },
-	[SchemeNormHighlight] = { "#ffc978", "#222222" },
-	[SchemeOut] = { "#000000", "#00ffff" },
+	[SchemeNorm] =          { "#808080", "#000000" },
+	[SchemeSel] =           { "#000000", "#606080" },
+	[SchemeSelHighlight] =  { "#202020", "#606080" },
+	[SchemeNormHighlight] = { "#a0a0a0", "#000000" },
+	[SchemeOut] =           { "#000000", "#00ffff" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
@@ -27,4 +27,4 @@ static unsigned int lines      = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 0;
+static unsigned int border_width = 2;
