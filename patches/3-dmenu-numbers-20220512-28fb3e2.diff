@@ -11,15 +11,13 @@ diff --git a/dmenu.c b/dmenu.c
 index 571bc35..70004e7 100644
 --- a/dmenu.c
 +++ b/dmenu.c
-@@ -24,6 +24,8 @@
-                              * MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
- #define LENGTH(X)             (sizeof X / sizeof X[0])
+@@ -24,4 +24,6 @@
  #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
 +#define NUMBERSMAXDIGITS      100
 +#define NUMBERSBUFSIZE        (NUMBERSMAXDIGITS * 2) + 1
 
  /* enums */
- enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
+ enum { SchemeNorm, SchemeSel, SchemeOut, SchemeNormHighlight, SchemeSelHighlight, SchemeLast }; /* color schemes */
 @@ -34,6 +36,7 @@ struct item {
  	int out;
  };
@@ -38,7 +36,7 @@ index 571bc35..70004e7 100644
  	for (i = 0, next = curr; next; next = next->right)
  		if ((i += (lines > 0) ? bh : textw_clamp(next->text, n)) > n)
 @@ -143,6 +146,21 @@ drawitem(struct item *item, int x, int y, int w)
- 	return drw_text(drw, x, y, w, bh, lrpad / 2, item->text, 0);
+ 	return r;
  }
 
 +static void
