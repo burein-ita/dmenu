@@ -737,7 +737,7 @@ setup(void)
 
 		x = info[i].x_org;
 		y = info[i].y_org + (topbar ? 0 : info[i].height - mh);
-		mw = info[i].width;
+		mw = info[i].width - (border_width * 2);
 		XFree(info);
 	} else
 #endif
@@ -747,7 +747,7 @@ setup(void)
 			    parentwin);
 		x = 0;
 		y = topbar ? 0 : wa.height - mh;
-		mw = wa.width;
+		mw = wa.width - (border_width * 2);
 	}
 	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
 	inputw = mw / 3; /* input width: ~33% of monitor width */
