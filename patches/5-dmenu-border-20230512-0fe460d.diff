@@ -13,7 +13,7 @@ diff --git a/dmenu.c b/dmenu.c
 index 27b7a30..7c130fc 100644
 --- a/dmenu.c
 +++ b/dmenu.c
-@@ -684,9 +684,11 @@ setup(void)
+@@ -684,8 +684,10 @@ setup(void)
  	swa.override_redirect = True;
  	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
  	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
@@ -25,8 +25,7 @@ index 27b7a30..7c130fc 100644
 +		XSetWindowBorder(dpy, win, scheme[SchemeSel][ColBg].pixel);
  	XSetClassHint(dpy, win, &ch);
 
-
-@@ -757,6 +759,8 @@ main(int argc, char *argv[])
+@@ -757,5 +759,7 @@ main(int argc, char *argv[])
  			colors[SchemeSel][ColFg] = argv[++i];
  		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
  			embed = argv[++i];
