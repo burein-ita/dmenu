@@ -736,7 +736,7 @@ setup(void)
 					break;
 
 		x = info[i].x_org;
-		y = info[i].y_org + (topbar ? 0 : info[i].height - mh);
+		y = info[i].y_org + (topbar ? 0 : info[i].height - mh - border_width * 2);
 		mw = info[i].width - (border_width * 2);
 		XFree(info);
 	} else
