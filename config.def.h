@@ -3,7 +3,7 @@
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
-static const int user_bh = 14;               /* add an defined amount of pixels to the bar height */
+static const int user_bh = 10;               /* add an defined amount of pixels to the bar height */
 
 static const char *fonts[] = {
 	"Terminus:size=11:style=bold"
@@ -12,8 +12,8 @@ static const char *prompt      = "SELECTION: ";      /* -p  option; prompt to th
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] =          { "#808080", "#000000" },
-	[SchemeSel] =           { "#000000", "#806060" },
-	[SchemeSelHighlight] =  { "#000000", "#806060" },
+	[SchemeSel] =           { "#000000", "#808080" },
+	[SchemeSelHighlight] =  { "#000000", "#808080" },
 	[SchemeNormHighlight] = { "#c0c0c0", "#000000" },
 	[SchemeOut] =           { "#000000", "#00ffff" },
 };
@@ -27,4 +27,4 @@ static unsigned int lines      = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 2;
+static unsigned int border_width = 4;
